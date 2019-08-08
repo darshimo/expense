@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+delete "{{ object.pk }}"
+{% endblock title %}
+
+
+{% block content %}
+{{object.name}}
+{{object.datetime}}
+{{object.amount}}
+{{object.genre}}
+{{object.is_outgo}}
+<form action="" method="POST">{% csrf_token %}
+    <input type="submit" value="delete">
+</form>
+<a href={% url 'detail' object.pk %}>cancel</a>
+{% endblock content %}

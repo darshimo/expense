@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+update "{{ object.pk }}"
+{% endblock title %}
+
+
+{% block content %}
+
+<form action="" method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="update">
+</form>
+<a href={% url 'detail' object.pk %}>cancel</a>
+
+
+<!--
+<div class="container" style="padding:20px 0">
+    <form method="post" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form-group">
+            <label class="control-label" for="{{ field.name }}">{{ field.label }}</label>
+            <div class="form-control">
+                <input type="" class="form-control" name="{{ field.name }}" id="{{ field.name }}">
+            </div>
+        </div>
+        {% endfor %}
+        <div class="form-groupe text-right" style="padding:20px 0">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+-->
+
+{% endblock content %}

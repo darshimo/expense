@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+update "{{ object.pk }}"
+{% endblock title %}
+
+
+{% block header %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Detail</h1>
+        <p class="lead">this is detail.</p>
+    </div>
+</div>
+{% endblock header %}
+
+
+{% block content %}
+<p>name : {{ object.name }}</p>
+<p>amount : {{ object.amount }}</p>
+<p>date : {{ object.datetime }}</p>
+<p>is_outgo : {{ object.is_outgo }}</p>
+<p>genre : {{ object.genre }}</p>
+<p>memo : {{ object.memo }}</p>
+<a href={% url 'update' object.pk %} class="btn btn-info btn-lg" tabindex="-1" role="button"
+    aria-disabled="true">update</a>
+<a href={% url 'delete' object.pk %} class="btn btn-danger btn-lg" tabindex="-1" role="button"
+    aria-disabled="true">delete</a>
+<a href={% url 'list' %}>back</a>
+{% endblock content %}
