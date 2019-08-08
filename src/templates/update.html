@@ -9,9 +9,9 @@ update "{{ object.pk }}"
 
 <form action="" method="POST">{% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="update">
+    <input type="submit" value="Update">
 </form>
-<a href={% url 'detail' object.pk %}>cancel</a>
+<a href={% url 'detail' object.pk %}>Cancel</a>
 
 
 <!--

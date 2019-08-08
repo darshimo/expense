@@ -6,15 +6,24 @@ list
 
 
 {% block header %}
+
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">List</h1>
-        <p class="lead">this is list.</p>
+        <p class="lead">Keep a household account book</p>
     </div>
 </div>
+
 {% endblock header %}
 
 {% block content %}
+
+<div class="container">
+    <a href="{% url 'create' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">
+        Create
+    </a>
+</div>
+
 {% for item in object_list %}
 <div class="container">
     <a href={% url 'detail' item.pk %} class="btn btn-{{ item.is_outgo|yesno:'primary,success' }} btn-lg btn-block"

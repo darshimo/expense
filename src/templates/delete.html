@@ -12,7 +12,7 @@ delete "{{ object.pk }}"
 {{object.genre}}
 {{object.is_outgo}}
 <form action="" method="POST">{% csrf_token %}
-    <input type="submit" value="delete">
+    <input type="submit" value="Delete">
 </form>
-<a href={% url 'detail' object.pk %}>cancel</a>
+<a href={% url 'detail' object.pk %}>Cancel</a>
 {% endblock content %}
