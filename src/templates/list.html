@@ -12,24 +12,25 @@ list
         <h1 class="display-4">List</h1>
         <p class="lead">Keep a household account book</p>
     </div>
+    <div class="container">
+        <a href="{% url 'create' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">
+            Create
+        </a>
+    </div>
 </div>
+
 
 {% endblock header %}
 
 {% block content %}
 
-<div class="container">
-    <a href="{% url 'create' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">
-        Create
-    </a>
-</div>
-
 {% for item in object_list %}
 <div class="container">
     <a href={% url 'detail' item.pk %} class="btn btn-{{ item.is_outgo|yesno:'primary,success' }} btn-lg btn-block"
         tabindex="-1" role="button" aria-disabled="true">
-        <p>{{ item.datetime }} {{ item.name }} {{ item.amount }} {{item.genre}}</p>
+        <p>{{ item.name }}</p>
     </a>
 </div>
+<br>
 {% endfor %}
 {% endblock content %}
