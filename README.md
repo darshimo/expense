@@ -6,8 +6,6 @@
 
 ## usage
 
-ビルドしてサーバーを起動してください．
-
 ```
 python manage.py makemigrations app
 python manage.py migrate
